@@ -1,6 +1,29 @@
-# 股票与虚拟货币趋势分析技能 (OpenClaw Stock Analyzer)
 
-这是一个为 OpenClaw Agent 生态量身定制的复合型技能（Composite Skill），旨在赋予 Agent 抓取金融市场数据并自动化导出 K 线趋势图表的能力。
+name: openclaw-stock-analyzer
+description: >-
+  Use this skill when the user asks for financial market data, stock trend analysis, 
+  crypto currency historical data (such as ETH, Bitcoin), or requests to generate and 
+  export K-line price trend charts. This skill triggers a local Python script to fetch 
+  live data and output visual charts.
+metadata:
+  author: akuself
+  version: v1.0.0
+dependencies:
+  native_skills:
+    - data_visualizer
+  native_tools:
+    - yahoo_finance
+custom_components:
+  tools:
+    - name: local_chart_exporter
+      source: tools/chart_exporter.py
+      handler: export_line_chart
+      description: "接收价格和信号数据，导出为标准的 OpenClaw 折线图渲染包"
+  sub_prompts:
+    - name: trend_analyst
+      source: prompts/trend_analyst.txt
+---
+# 这是一个为 OpenClaw Agent 生态量身定制的复合型技能（Composite Skill），旨在赋予 Agent 抓取金融市场数据并自动化导出 K 线趋势图表的能力。
 
 ## 💡 核心功能
 
