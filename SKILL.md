@@ -1,4 +1,4 @@
-
+---
 name: openclaw-stock-analyzer
 description: >-
   Use this skill when the user asks for financial market data, stock trend analysis, 
@@ -13,6 +13,12 @@ dependencies:
     - data_visualizer
   native_tools:
     - yahoo_finance
+  python_packages:
+    - yfinance      # 🌟 用于获取雅虎财经的股票/加密货币历史 K 线数据
+    - mplfinance    # 🌟 专门用于绘制高颜值、标准的金融K线图（蜡烛图）
+    - matplotlib    # 🌟 底层绘图基础库，用于控制图表的画布、保存和样式渲染
+    - pandas        # 🌟 用于处理和清洗时间序列数据（如计算均线、K线指标）
+    - requests      # 🌟 网络请求库，防止本地 Python 脚本需要紧急抓取其他补充数据
 custom_components:
   tools:
     - name: local_chart_exporter
