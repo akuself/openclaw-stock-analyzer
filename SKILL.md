@@ -1,0 +1,16 @@
+# 股票与虚拟货币趋势分析技能 (OpenClaw Stock Analyzer)
+
+这是一个为 OpenClaw Agent 生态量身定制的复合型技能（Composite Skill），旨在赋予 Agent 抓取金融市场数据并自动化导出 K 线趋势图表的能力。
+
+## 💡 核心功能
+
+* **金融数据获取**：支持获取指定股票（如 AAPL）或虚拟货币（如 ETH/以太坊）的近期历史交易数据。
+* **趋势图表生成**：调用本地 Python 脚本自动处理数据，并在本地生成可视化 K 线/走势图表。
+* **AI 策略分析**：结合内置的金融分析师提示词，由 Agent 针对图表及数据给出市场走势的直观判断。
+
+## 🛠️ 本地依赖与安装要求
+
+为了让本技能中的 Python 工具（`tools/chart_exporter.py`）在用户的 Mac/Windows 电脑上顺利跑通，请确保本地已安装以下 Python 核心依赖库：
+
+```bash
+pip install matplotlib pandas requests
