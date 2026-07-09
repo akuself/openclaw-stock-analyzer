@@ -1,5 +1,5 @@
 {
-  "id": "stock-analyzer",
+  "id": "openclaw-stock-analyzer",
   "name": "智能个股趋势分析器",
   "version": "1.0.0",
   "description": "一键获取个股数据、量化趋势并在 Canvas 渲染折线图的复合技能",
