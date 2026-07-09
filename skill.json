@@ -1,0 +1,27 @@
+{
+  "id": "stock-analyzer",
+  "name": "智能个股趋势分析器",
+  "version": "1.0.0",
+  "description": "一键获取个股数据、量化趋势并在 Canvas 渲染折线图的复合技能",
+  "entrypoint": "README.md",
+  "dependencies": {
+    "native_skills": ["data_visualizer"],
+    "native_tools": ["yahoo_finance"]
+  },
+  "custom_components": {
+    "tools": [
+      {
+        "name": "local_chart_exporter",
+        "source": "tools/chart_exporter.py",
+        "handler": "export_line_chart",
+        "description": "接收价格和信号数据，导出为标准的 OpenClaw 折线图渲染包"
+      }
+    ],
+    "sub_prompts": [
+      {
+        "name": "trend_analyst",
+        "source": "prompts/trend_analyst.txt"
+      }
+    ]
+  }
+}
